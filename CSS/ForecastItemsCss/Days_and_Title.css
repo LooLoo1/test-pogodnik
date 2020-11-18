@@ -3,26 +3,25 @@
 
 
 :root{
-   --Shodow_3D: 5px 5px 10px rgba(25, 25, 25, 0.5),
-               inset -5px -5px 10px rgba(0,0,0,0.4),
-               -2px -2px 10px 2px rgba(255, 255, 255, 0.3),
-               inset 2px 2px 10px 2px rgba(255,255,255,0.5);
+   --Shodow_3D: 2px 2px 5px rgba(0, 0, 25, 0.4),
+					inset -2px -2px 2px rgba(0,0,0,0.4),
+					-2px -2px 5px rgba(255, 255, 255, 0.5),
+					inset 2px 2px 2px rgba(255,255,255,0.5);
 
-   --Shodow_3D_INSET:-5px -5px 10px rgba(25, 25, 25, 0.2),
-               inset 5px 5px 10px rgba(25, 25, 25, 0.5),
-               0px 0px 0px rgba(255, 255, 255, 0.5),
-               inset 2px 2px 10px rgba(255,255,255,0.8);
+	--Shodow_3D_INSET:2px 2px 5px rgba(0, 0, 25, 0.5),
+						inset 5px 5px 5px rgba(0,0,0,0.3),
+						-2px -2px 5px rgba(255, 255, 255, 0.5),
+						inset -3px -3px 5px rgba(255,255,255,0.3);
 }
-/* 
-   --Shodow_3D: 5px 5px 10px rgba(0,0,0,0.5),
-               inset -5px -5px 10px rgba(0,0,0,0.4),
-               -2px -2px 10px rgba(255, 255, 255, 0.3),
-               inset 2px 2px 10px rgba(255,255,255,0.5);
+/* --Shodow_3D: 5px 5px 10px rgba(25, 25, 25, 0.5),
+inset -5px -5px 10px rgba(0,0,0,0.4),
+-2px -2px 10px 2px rgba(255, 255, 255, 0.3),
+inset 2px 2px 10px 2px rgba(255,255,255,0.5);
 
-   --Shodow_3D_INSET:-5px -5px 10px rgba(0,0,0,0.2),
-               inset 5px 5px 10px rgba(0,0,0,0.5),
-               -2px -2px 10px rgba(255, 255, 255, 0.5),
-               inset 2px 2px 10px rgba(255,255,255,0.8); */
+--Shodow_3D_INSET:-5px -5px 10px rgba(25, 25, 25, 0.2),
+inset 5px 5px 10px rgba(25, 25, 25, 0.5),
+0px 0px 0px rgba(255, 255, 255, 0.5),
+inset 2px 2px 10px rgba(255,255,255,0.8); */
 
 
 /*Title*/
@@ -32,7 +31,12 @@
    flex-wrap: wrap;
    margin-top: 3%;
    margin-bottom: 5px;
-   font-size: 1rem;
+	font-size: 1rem;
+	cursor: default;
+}
+
+.top_title .east_west{
+	cursor: default;
 }
 
 .top_title .city,
@@ -41,7 +45,7 @@
    border-radius: 1em;
    margin-right: 1em;
    padding: 0.6em;
-   box-shadow: var(--Shodow_3D);
+	box-shadow: var(--Shodow_3D);
 }
 
 .top_title .city h2{
@@ -190,11 +194,18 @@
    flex-direction: column;
    justify-content: space-between;
    margin: 0 0.5em;
-   padding: 0.133em;
+	padding: 0.133em;
+	transition: all .2s linear;
 }
 
 .top_title .east_west .info p{
    font-size: 1em;
+}
+
+.east_west:hover .east:hover .info,
+.east_west:hover .west:hover .info{
+   font-weight: 700;
+   transform: scale(1.1);
 }
 
 .top_title .east_west .info .info_time{
@@ -203,11 +214,12 @@
 
 
 .top_title .city{
-   padding-right: 1em;
+	padding-right: 1em;
+	transition: all .3s linear;
 }
 
 .top_title .city .city_name{
-   margin: auto 0.5em;
+	margin: auto 0.5em;
 }
 
 .top_title .city .city_time{
@@ -215,7 +227,8 @@
    font-size: 1.133em;
    /* font-weight: 700; */
    margin: auto 0;
-   margin-right: 0.33em;
+	margin-right: 0.33em;
+	transition: all .2s linear;
 }
 
 .top_title .city .city_time::after{
@@ -226,6 +239,11 @@
    right: -0.5em;
    animation: top-bottom 5s ease infinite alternate .5s forwards,
               top-bottom_rot 10s ease-in-out infinite 2s;
+}
+
+.top_title .city:hover .city_time{
+   font-weight: 600;
+   transform: scale(1.1);
 }
 
 @keyframes top-bottom{
@@ -263,7 +281,7 @@
    position: relative;
    display: flex;
    width: 100%;
-   height: 11.66em;
+	height: 11.66em;
    margin-bottom: 0.33em;
 
    overflow-x: scroll;
@@ -273,6 +291,12 @@
    scroll-behavior: smooth;
    -webkit-overflow-scrolling: touch;
    scroll-snap-type: mandatory;
+}
+
+.slides::after{
+   content: '';
+   display: block;
+   min-width: 0.6em;
 }
 
 .slides::-webkit-scrollbar {
@@ -306,24 +330,18 @@
    box-shadow: var(--Shodow_3D);
 
    border-radius: 15%;
-   transition: box-shadow .3s ease-in-out,
-               transform .3s ease-in-out;
+   transition: all .7s ease-in-out;
 }
 
-.top_block .days:first-child{
-   margin-left: 1%;
+
+.top_block .days:nth-child(2){
+	margin-left: 1%;
 }
 
 .top_block .days:last-child{
    margin-right: 1%;
 }
 
-.slides::after{
-   content: '';
-   display: block;
-   min-width: 0.6em;
-
-}
 
 
 /* .top_block .arrow{
@@ -345,12 +363,53 @@
    right: -8px;
 } */
 
-.top_block .days:hover,
+/* .top_block .days:hover,
 .top_block .days.active{
+   box-shadow: var(--Shodow_3D_INSET);
+} */
+
+input[type="radio"].daysR {
+	display: none;
+}
+
+input[type="radio"]:not(:checked) + label.days {
+	box-shadow: var(--Shodow_3D);
+}
+
+input[type="radio"]:checked + label.days{
+	box-shadow: var(--Shodow_3D_INSET);
+}
+
+input[type="radio"]:not(:checked) + label.days:hover{
    box-shadow: var(--Shodow_3D_INSET);
 }
 
+input[type="radio"]:checked + label.days::before{
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border-radius: 15%;
+	z-index: 1;
+	background: linear-gradient(150deg, transparent 30%, rgba(255, 255, 255, 1) 50%, transparent 70%);
+	background-size: 100% 350%;
+	animation: moving 1s cubic-bezier(1,0,0,1);
+}
+
+@keyframes moving {
+	0%{background-position-y: 100%;}
+	100%{background-position-y: 0%;}
+}
+
+ /* input:disabled + label:before {
+	filter: grayscale(90%);
+} */
+
+
 .top_block .days .weekday{
+	position: relative;
    font-size: 1em;
    text-align: center;
    font-weight: 600;
@@ -358,9 +417,10 @@
 }
 
 .top_block .days:hover .weekday,
-.top_block .days.active .weekday{
+input[type="radio"]:checked + label.days .weekday{
    transform: scale(.9);
 }
+
 
 .top_block .days .numeric{
    text-align: center;
@@ -371,7 +431,7 @@
 }
 
 .top_block .days:hover .numeric,
-.top_block .days.active .numeric{
+input[type="radio"]:checked + label.days .numeric{
    font-size: calc(1em + 10px);
 }
 
@@ -383,12 +443,12 @@
    width: 3em;
    height: 3em;
    border-radius: 50%;
-   transition: all .2s ease;
+   transition: all .7s ease;
 }
 
 .days:hover .imgs{
    transform: translate(-50%, -50%) scale(.9);
-   filter: drop-shadow(0 0 2px rgba(130, 130, 130, 0.9));
+   filter: drop-shadow(5px 3px 2px rgba(0, 0, 0, 0.5));
 }
 
 .top_block .days .temperature{
@@ -406,9 +466,9 @@
 }
 
 .days:hover .min:hover,
-.days.active .min:hover,
+input[type="radio"]:checked + label.days .min:hover,
 .days:hover .max:hover,
-.days.active .max:hover{
+input[type="radio"]:checked + label.days .max:hover{
    font-weight: 700;
    transform: scale(1.1);
 }

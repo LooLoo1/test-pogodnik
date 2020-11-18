@@ -35,7 +35,11 @@
 
    .top_block {
       font-size: 0.97rem;
-   }
+	}
+	
+	/* .conteyner_cards{
+		font-size: .8rem;
+	} */
 }
 
 @media (max-width: 375px){

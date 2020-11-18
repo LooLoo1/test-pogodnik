@@ -56,8 +56,12 @@
    scroll-snap-align: center;
 
    /*linear-gradient(0deg, rgba(20,146,2,1) 0%, rgba(103,208,54,1) 15%, rgba(108,220,56,1) 30% 40%, rgba(178,254,250,1) 60%, rgba(86,204,242,1) 80%, rgba(45,132,218,1) 100%);    */
-   box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-   transition: transform .3s ease-in-out;
+   box-shadow: 0em 0em 0.33em 0.133em rgba(0, 0, 0, 0.2);
+   transition: all .3s ease-in-out;
+}
+
+.hours_cards:hover{
+   box-shadow: 0em 0em 0.33em 0.133em rgba(255, 255, 255, 0.2);
 }
 
 .block_hours_cards:nth-child(2) .hours_cards{
@@ -69,7 +73,6 @@
 }
 
 .block_hours_cards:nth-child(4) .hours_cards{
-
    background: linear-gradient(0deg, rgb(5, 0, 1) 0%, 
                                      rgb(34, 1, 7) 25%, 
                                      rgb(54, 3, 11) 35% 45%, 
@@ -158,8 +161,9 @@
    display: flex;
    font-size: 0.8em;
    padding: 0.333em 0.133em; 
-   /* filter: drop-shadow(0 0 2px rgba(120, 143, 147, 0.884)); */
-   transition: all .7s ease-in-out;   
+	/* filter: drop-shadow(0 0 2px rgba(120, 143, 147, 0.884)); */
+	transform-style: preserve-3d;
+   transition: all .4s ease-in-out;   
 }
 
 .hours_cards ul li:hover{
@@ -197,7 +201,8 @@
    text-overflow: ellipsis;
 }
 
-.hours_cards ul li span:nth-child(2){  
+.hours_cards ul li span:nth-child(2),
+.geomagneticFieldCont span{  
    font-size: 1.3em;
    margin-left: auto;
    margin-right: 0.15em;
@@ -215,7 +220,7 @@
 }
 
 .hours_cards ul li span:nth-child(4){
-   padding-top: 0.1333em;
+	padding-top: 0.1333em;
 }
 
 .hours_cards ul li:nth-child(1) span:nth-child(4){
@@ -223,6 +228,123 @@
    margin: 0 0.2em;
    font-size: calc(1em + 3px);
 }
+
+.geomagneticFieldCont{
+	position: relative;
+	width: 2em;
+	margin-left: auto;
+	margin-top: -.5em;
+	transform-style: preserve-3d;
+	/* width: auto; */
+}
+
+.geomagneticFieldCont span{
+	position: absolute;
+	transform: translate(75%,10%) translateZ(0px);
+	transition: all .6s linear;
+}
+
+.hours_cards ul li:hover .geomagneticFieldCont span{
+	transform: translate(75%,10%) translateZ(25px);
+	font-weight: bold;
+}
+
+.geomagneticField,
+.geomagneticFieldCont::before,
+.geomagneticFieldCont::after{
+	position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	box-shadow: 1px 1px 2px rgb(104 3 77 / 80%), 
+					inset 1px 1px 2px rgb(104 3 77 / 80%), 
+					-2px -2px 3px rgb(255 0 55 / 90%), 
+					inset -2px -2px 3px rgb(255 0 55 / 90%);
+	opacity: 0;
+	animation: border-transform 5s linear infinite, hue-rot-geomagneticField 7s ease-in-out alternate infinite;
+	animation-play-state: paused;
+ }
+
+.geomagneticFieldCont::before{
+	transform: translateZ(0px);
+	animation-delay: -3s;
+	transition: all .4s linear;
+}
+
+.hours_cards ul li:hover .geomagneticFieldCont::before{
+	transform: translateZ(5px);
+}
+
+.geomagneticField{
+	transform: translateZ(0px) scale(.7);
+	animation-delay: -2s;
+	transition: all .8s linear;
+}
+.hours_cards ul li:hover .geomagneticField{
+	transform: translateZ(10px) scale(.7);
+}
+
+.geomagneticFieldCont::after{
+	transform: translateZ(0px) scale(.5);
+	animation-delay: -1s;
+	transition: all 1.2s linear;
+}
+
+.hours_cards ul li:hover .geomagneticFieldCont::after{
+	transform: translateZ(15px) scale(.5);
+}
+
+.hours_cards:hover ul li .geomagneticField,
+.hours_cards:hover ul li .geomagneticFieldCont::before,
+.hours_cards:hover ul li .geomagneticFieldCont::after{
+	opacity: 1;
+	animation-play-state: running;
+	/* animation-delay: 0s; */
+}
+
+@keyframes hue-rot-geomagneticField{
+	0%{filter: hue-rotate(0deg);}
+	100%{filter: hue-rotate(-90deg);}
+}
+
+ @keyframes border-transform{
+	0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
+	14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
+	28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
+	42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
+	56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
+	70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
+	84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+}
+
+
+
+.hours_cards ul li:nth-child(3){
+	position: relative;
+}
+
+.hours_cards ul li:nth-child(3) span:nth-child(1)::before{
+	content: '';
+	position: absolute;
+	display: block;
+	background: red;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	box-shadow: 2em 2em 0 rgba(19, 96, 250, 0.6),
+					2em 2em 0 rgba(19, 96, 250, 0.6),
+					2em 2em 0 rgba(19, 96, 250, 0.6),
+					2em 2em 0 rgba(19, 96, 250, 0.6),
+					2em 2em 0 rgba(19, 96, 250, 0.6),
+					2em 2em 0 rgba(19, 96, 250, 0.6);
+}
+
+
+
+
 
 .hours_cards ul li img{
    margin-left: 0.2em;
