@@ -101,6 +101,11 @@
    transform: translateZ(10px) scale(1.4);
 }
 
+.anotationTwo{
+	position: relative;
+	height: 100%;
+}
+
 .weather{
    display: flex;
    justify-content: space-between;
@@ -326,7 +331,7 @@
 	position: relative;
 }
 
-.hours_cards ul li:nth-child(3) span:nth-child(1)::before{
+/* .hours_cards ul li:nth-child(3) span:nth-child(1)::before{
 	content: '';
 	position: absolute;
 	display: block;
@@ -340,7 +345,7 @@
 					2em 2em 0 rgba(19, 96, 250, 0.6),
 					2em 2em 0 rgba(19, 96, 250, 0.6),
 					2em 2em 0 rgba(19, 96, 250, 0.6);
-}
+} */
 
 
 

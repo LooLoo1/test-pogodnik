@@ -1,25 +1,25 @@
-let banner = ["Test №1", "Test №2", "Test №3"];
+// let banner = ["Test №1", "Test №2", "Test №3"];
 
-// console.log(banner[1].length);
+// // console.log(banner[1].length);
 
 
-for (let i = 0; i < banner.length; i++) {
-   const bannerLenght = banner[i].length;
+// for (let i = 0; i < banner.length; i++) {
+//    const bannerLenght = banner[i].length;
 
-   for (let ii = 0; ii < bannerLenght; ii++) {
-      // const element = array[ii];
-      // bannerF();
+//    for (let ii = 0; ii < bannerLenght; ii++) {
+//       // const element = array[ii];
+//       // bannerF();
 
-   }
+//    }
 
-}
+// }
 
-function bannerF() {
+// function bannerF() {
 
-}
+// }
 
-let vievBanner = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
-console.log(vievBanner);
+// let vievBanner = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
+// console.log(vievBanner);
 
 
 

@@ -1,0 +1,159 @@
+header,
+footer{
+	visibility: hidden;
+   width: 100wv;
+   height: 0px;
+   background-color: tomato;
+}
+
+header{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0 50px;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 17vh;
+
+	background: rgba(0, 0, 0, 0.8);
+	backdrop-filter: blur(5px);
+	border-radius: 0 0 15px 15px;
+
+	box-shadow: 0 20px 10px rgba(0, 0, 0, .45); /*inset 0 20px 20px rgba(0, 0, 0, .55),*/
+	z-index: 100;
+}
+
+.logoHeader{
+
+}
+.logoHeader {
+	position: relative;
+}
+.logo {
+	width: 75px;
+	height: 75px;
+	/* background-color: red; */
+}
+.timeLogo {
+	position: absolute;
+	bottom: 0;
+	right: -10px;
+	color: white;
+	margin-top: 10px;
+	font-size: 1.3em;
+	font-weight: 600;
+	letter-spacing: .07em;
+
+	text-align: center;
+}
+.inputHeader {
+	width: 50%;
+}
+.HeaderSerch{
+	position: relative;
+	width: 100%;
+	min-height: 50px;
+}
+
+.inputHeader label {
+	position: relative;
+}
+
+.inputHeader label::before,
+.inputHeader label::after{
+	content: '';
+	position: absolute;
+	right: 10%;
+	top: 50%;
+	cursor: pointer;
+	transition: all .2s linear;
+}
+
+.inputHeader label::before{
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	box-shadow: var(--Shodow_3D_INSET);
+	/* box-shadow: 0 0 0 2px white; */
+	transform: translateY(-80%);
+}
+
+.inputHeader label::after{
+	width: .2em;
+	height: .6em;
+	border-radius: 10px;
+	box-shadow: var(--Shodow_3D_INSET);
+	/* box-shadow: 0 0 0 2px white; */
+	transform: translate(-80%, 20%) rotate(-40deg);
+}
+
+/* .inputHeader label::before{
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border-radius: 15%;
+	z-index: 0;
+	pointer-events: none;
+	background: linear-gradient(0deg, transparent 30%, rgba(255, 255, 255, 1) 50%, transparent 70%);
+	background-size: 100% 350%;
+	animation: moving 1s cubic-bezier(1,0,0,1);
+} */
+
+.inputHeader label input {
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	padding: 0 20px;
+	font-size: 20px;
+	background: transparent;
+	border: none;
+	color: white;
+	box-shadow: var(--Shodow_3D_INSET), 0 0 0 rgba(0, 0, 0, 0);
+	transition: all .2s linear;
+}
+
+.inputHeader label input::placeholder{
+	color: rgba(255, 255, 255, 0.45);
+}
+
+.inputHeader label input:focus{
+	box-shadow: var(--Shodow_3D_INSET), 
+					0 0 20px 2px rgba(255, 255, 255, 0.918);
+
+}
+
+
+
+
+
+.theme {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	box-shadow: #FFFFFF -15px 0;
+	transform: rotate(-5deg) translateX(10px);
+	transform-origin: 100% -50%;
+	animation: starry 5s ease-in-out infinite;
+	/* background-color: red; */
+}
+
+@keyframes starry {
+	50% { transform: rotate(10deg); }
+}
+.icon {
+
+}
+
+
+
+
+
+footer{
+   margin-top: auto;
+}
