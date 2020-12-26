@@ -1,0 +1,187 @@
+/* <div class="cloud rain">
+	<div class="balloon_clouds"></div>
+	<div class="balloon_clouds"></div>
+	<div class="balloon_clouds"></div>
+	<div class="balloon_clouds"></div>
+	<div class="balloon_clouds"></div>
+	<div class="balloon_clouds"></div>
+	<div class="balloon_clouds"></div>
+	<div class="balloon_clouds"></div>
+	<div class="balloon_clouds"></div>
+	<div class="balloon_clouds"></div>
+</div> */
+
+/* /\ /\ /\ */ 
+/*Закоментовані шаблони іконок*/
+
+:root{
+   --cloud_Rain_BG: linear-gradient(90deg, rgb(173 173 173 / 85%) 0% 25%, rgb(91 91 91) 100%);
+   --cloud_Shodow_Rain: 2px 2px 6px 1px rgb(67 65 65 / 70%),
+								-3px -1px 3px rgb(104 104 104 / 40%),
+								inset -3px -3px 5px rgb(39 39 39 / 80%),
+								inset 3px 2px 8px rgb(51 51 51 / 60%);
+}
+
+.rain{
+	transform: scale(1.2);
+}
+
+.thunderstorm.rain,
+.clouds.rain{
+	transform: scale(.9)
+}
+
+.rain .balloon_clouds,
+.cloudy .balloon_clouds{
+	background: var(--cloud_Rain_BG);
+	box-shadow: var(--cloud_Shodow_Rain);
+	--SpeadRain: 2s;
+}
+
+.rain .balloon_clouds:nth-child(1)::after,
+.rain .balloon_clouds:nth-child(1)::before,
+.rain .balloon_clouds:nth-child(2)::after,
+.rain .balloon_clouds:nth-child(2)::before,
+.rain .balloon_clouds:nth-child(3)::after,
+.rain .balloon_clouds:nth-child(3)::before{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 38%;
+	height: 38%;
+	left: 0%;
+	bottom: 0%;
+
+	border-radius: 50%;
+	border-top-right-radius: 0;
+
+	background-color: royalblue;
+	box-shadow: 1px 1px 1px rgba(2, 2, 71, 0.4),
+					inset -1px -1px 1px rgba(13, 35, 36, 0.4),
+					-1px -1px 1px rgba(100, 183, 255, 0.5),
+					inset 1px 1px 1px rgba(1, 139, 177, 0.5);
+
+	transform: rotate(-35deg);
+	transition: all .1s linear;
+}
+
+.rain .balloon_clouds:nth-child(1)::before,
+.rain .balloon_clouds:nth-child(2)::before,
+.rain .balloon_clouds:nth-child(3)::before{
+	border-radius: 50%;
+	width: 20%;
+	height: 20%;
+}
+
+.rain .balloon_clouds:nth-child(1)::after{
+	animation: rain1_1 var(--SpeadRain) linear infinite;
+	animation-delay: 1s;
+}
+
+.rain .balloon_clouds:nth-child(1)::before{
+	animation: rain1_2 var(--SpeadRain) linear infinite;
+	animation-delay: .5s;
+}
+
+.rain .balloon_clouds:nth-child(2)::after{
+	width: 36%;
+	height: 38%;
+	animation: rain2_1 var(--SpeadRain) linear infinite;
+	animation-delay: 1s;
+}
+
+.rain .balloon_clouds:nth-child(2)::before{
+	animation: rain2_2 var(--SpeadRain) linear infinite;
+	animation-delay: 0s;
+}
+
+.rain .balloon_clouds:nth-child(3)::after{
+	width: 40%;
+	height: 40%;
+	animation: rain3_1 var(--SpeadRain) linear infinite;
+	animation-delay: .1s;
+}
+
+.rain .balloon_clouds:nth-child(3)::before{
+	animation: rain3_2 var(--SpeadRain) linear infinite;
+	animation-delay: .7s;
+}
+
+@keyframes rain1_1{
+	0%{
+		left: 80%;
+		bottom: 0%;
+		transform: rotate(-30deg) scale(1);
+	}
+	100%{
+		left: 60%;
+		bottom: -200%;
+		transform: rotate(-30deg) scale(0);
+	}
+}
+
+@keyframes rain1_2{
+	0%{
+		left: 30%;
+		bottom: 0%;
+	}
+	50%{transform: rotate(-30deg) scale(1);}
+	100%{
+		left: 13%;
+		bottom: -220%;
+		transform: rotate(-30deg) scale(0);
+	}
+}
+
+@keyframes rain2_1{
+	0%{
+		left: 26%;
+		bottom: 0%;
+	}
+	50%{transform: rotate(-30deg) scale(1);}
+	100%{
+		left: 0%;
+		bottom: -280%;
+		transform: rotate(-30deg) scale(0);
+	}
+}
+
+@keyframes rain2_2{
+	0%{
+		left: 26%;
+		bottom: 0%;
+	}
+	50%{transform: rotate(-30deg) scale(1);}
+	100%{
+		left: 0%;
+		bottom: -290%;
+		transform: rotate(-30deg) scale(0);
+	}
+}
+
+@keyframes rain3_1{
+	0%{
+		left: 37%;
+		bottom: 0%;
+	}
+	50%{transform: rotate(-30deg) scale(1);}
+	100%{
+		left: 12%;
+		bottom: -290%;
+		transform: rotate(-30deg) scale(0);
+	}
+}
+
+@keyframes rain3_2{
+	0%{
+		left: 130%;
+		bottom: 0%;
+	}
+	50%{transform: rotate(-30deg) scale(1);}
+	100%{
+		left: 100%;
+		bottom: -320%;
+		transform: rotate(-30deg) scale(0);
+	}
+}
+

@@ -9,7 +9,6 @@
    <div class="balloon_clouds"></div>
    <div class="balloon_clouds"></div>
    <div class="balloon_clouds"></div>
-   <p>!</p>
 </div> */
 
 /* /\ /\ /\ */ 
@@ -32,32 +31,12 @@
    transition: all .2s ease-in-out;
 }
 
-.cloud p{
-   position: absolute;
-   color: #fff;
-   font-weight: bold;
-   font-size: 16px;
-   padding: 5px 10px;
-   top: 50%;
-	left: 50%;
-   transform: translate3d(-50%,-50%, 15px);
-   opacity: 0;
-   z-index: 2;
-   transition: all .5s ease-in-out;
-}
-
-.balloon_clouds:hover ~ p,
-.cloud:hover p {
-   opacity: 1;
-   transform: translate3d(-50%,-50%, 20px);
-}
-
 .balloon_clouds{
 	position: absolute;
 	border-radius: 50%; /*30%*/
 	background: var(--cloud_BG);
-   box-shadow: var(--cloud_Shodow);/*Little*/
-   /* animation: anim-clouds 20s ease infinite alternate; */
+	box-shadow: var(--cloud_Shodow);
+   /* animation: anim-clouds 20s linear infinite alternate; */
 }
 @keyframes anim-clouds{
    0%{margin: 0px 0px 0px 0px;}
@@ -146,4 +125,4 @@
 	top: 40%;
    left: 12%;
    transform: translateZ(9px);
-}
+} 

@@ -59,7 +59,14 @@
                                           0px 5px 8px rgba(0, 251, 255, 0.4),
                                           inset 0px 3px 10px rgba(20,23,20, .35),
                                           inset 0px -8px 7px rgba(0, 251, 255, 0.4);
+
+/* --cloud_Shodow_Thunderstorm_NotLight:-2px 5px 8px rgba(40,40,40, 0.2),
+inset 0px 8px 10px rgb(29 1 30 / 25%),
+inset -2px -4px 10px rgb(66 2 70 / 65%); */
 }
+
+
+
 
 .thunderstorm{
    transform: scale(.9);
@@ -74,25 +81,50 @@
 .thunderstorm .balloon_clouds{
    background: var(--cloud_BG_Thunderstorm);
    box-shadow: var(--cloud_Shodow_Thunderstorm);
-   animation: Thunderstorm 3s linear infinite -.7s alternate;
+	animation: Thunderstorm 3s linear infinite -.7s alternate;
+	/* box-shadow: var(--cloud_Shodow_Thunderstorm_NotLight); */
 }
 
 .thunderstorm.fast_Wind .balloon_clouds{
-   box-shadow: var(--cloud_Shodow_Thunderstorm_fast_Wind);
+	box-shadow: var(--cloud_Shodow_Thunderstorm_fast_Wind);
    animation: Thunderstorm_fast_Wind 3s linear infinite -.7s alternate;
+}
+
+.thunderstorm.rain .balloon_clouds,
+.thunderstorm.cloudy .balloon_clouds{
+	background: var(--cloud_Rain_BG);
+	box-shadow: var(--cloud_Shodow_Thunderstorm), var(--cloud_Shodow_Rain);
+	animation: Thunderstorm-Rain 3s linear infinite -.7s alternate;
+}
+
+.thunderstorm.fast_Wind.rain .balloon_clouds,
+.thunderstorm.fast_Wind.cloudy .balloon_clouds{
+   box-shadow: var(--cloud_Shodow_Thunderstorm_fast_Wind), var(--cloud_Shodow_Rain);
+   animation: Thunderstorm_fast_Wind-Rain 3s linear infinite -.7s alternate;
 }
 
 @keyframes Thunderstorm {
    0%{box-shadow: var(--cloud_Shodow_Thunderstorm_NotLight);}
    50%{box-shadow: var(--cloud_Shodow_Thunderstorm);}
    100%{box-shadow: var(--cloud_Shodow_Thunderstorm_NotLight);}
-
 }
 
 @keyframes Thunderstorm_fast_Wind {
    0%{box-shadow: var(--cloud_Shodow_Thunderstorm_NotLight);}
    50%{box-shadow: var(--cloud_Shodow_Thunderstorm_fast_Wind);}
    100%{box-shadow: var(--cloud_Shodow_Thunderstorm_NotLight);}
+}
+
+@keyframes Thunderstorm-Rain {
+   0%{box-shadow: var(--cloud_Shodow_Thunderstorm_NotLight), var(--cloud_Shodow_Rain);}
+   50%{box-shadow: var(--cloud_Shodow_Thunderstorm), var(--cloud_Shodow_Rain);}
+   100%{box-shadow: var(--cloud_Shodow_Thunderstorm_NotLight), var(--cloud_Shodow_Rain);}
+}
+
+@keyframes Thunderstorm_fast_Wind-Rain {
+   0%{box-shadow: var(--cloud_Shodow_Thunderstorm_NotLight), var(--cloud_Shodow_Rain);}
+   50%{box-shadow: var(--cloud_Shodow_Thunderstorm_fast_Wind), var(--cloud_Shodow_Rain);}
+   100%{box-shadow: var(--cloud_Shodow_Thunderstorm_NotLight), var(--cloud_Shodow_Rain);}
 }
 
 .lightning{

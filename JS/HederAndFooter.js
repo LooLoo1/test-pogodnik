@@ -20,6 +20,12 @@ function detectYHeadFoot(e) {
 
 
 
+// Затримка ефекту в іконок Західа і Схода
+let EWicon = document.querySelectorAll('.icon');
+for (let i = 0; i < EWicon.length; i++) {
+	let randTD = Math.ceil(Math.random() * 10);
+	EWicon[i].style.animationDelay = randTD + 's';
+}
 
 
 
