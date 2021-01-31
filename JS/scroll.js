@@ -36,9 +36,11 @@ function selectDate() {
 				CloudBow.style.height = random_WH + "%";
 				CloudBow.style.transform = `translateZ(${random_TranslateZ}px)`;
 
-				clothes[i].appendChild(CloudBow);
+				// Установка значення перемінної
+				// let as = Math.ceil(Math.random() * 40);
+				// CloudBow.style.setProperty('--a', `${as}`);
 
-				// document.clothes[i].append(CloudBow); //До того блоку clothes[i] додай слас
+				clothes[i].appendChild(CloudBow);
 			}
 		}
 	}

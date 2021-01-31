@@ -1,5 +1,6 @@
 body{
-   display: flex;
+	display: flex;
+	position: relative;
    flex-direction: column;
 	width: 100%;
 	min-height: 100vh;
@@ -25,3 +26,18 @@ body{
 ul{
    list-style: none;
 }
+
+/* lol{
+	position: absolute;
+	display: block;
+	width: 300px;
+	height: 300px;
+	background-color: rgba(0, 0, 0, 0.0000001);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+	box-shadow: inset -24px -10px 0px #FFFFFF;
+	filter: drop-shadow(37px 7px 100px 10px rgba(255, 0, 0, 0.75));
+	z-index: 1000;
+} 
